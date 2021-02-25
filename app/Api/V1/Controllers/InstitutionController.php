@@ -90,7 +90,7 @@ class InstitutionController extends Controller
 
         $this->validate($request, [
             'name' => 'required|string|unique:institutions,name|min:3|regex:/^([a-z0-9 ])+$/i',
-            'email' => 'required|email',
+            'email' => 'required',
             'phone' => 'required|digits_between:8,16',
             'state_id' => 'required',
             'city_id' => 'required',
