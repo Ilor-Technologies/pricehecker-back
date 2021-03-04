@@ -19,3 +19,22 @@ if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
 }
 
 require_once __DIR__.'/public/index.php';
+
+/*<handlers>
+      <remove name="WebDAV" />
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+      <remove name="OPTIONSVerbHandler" />
+      <remove name="TRACEVerbHandler" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+    </handlers>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules>
+      <remove name="WebDAVModule" />
+    </modules>
+    <httpProtocol>
+      <customHeaders>
+        <add name="Access-Control-Allow-Origin" value="http://somedomain" />
+        <add name="Access-Control-Expose-Headers" value="Content-Type, Accept, expiry, uid, access-token, token-type" />
+        <add name="Access-Control-Allow-Methods" value="POST,GET,OPTIONS,PUT,DELETE" />
+      </customHeaders>
+    </httpProtocol>*/
