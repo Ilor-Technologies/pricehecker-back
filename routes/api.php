@@ -82,7 +82,7 @@ $api->version('v1', function (Router $api) {
 
 
     //requires sign-in, all routes here need token to get access
-    $api->group(['middleware' => 'jwt.auth'], function (Router $api) {
+    $api->group(['middleware' => ['jwt.auth', 'cors']], function (Router $api) {
 
         $api->get('users/{username}/profile', 'App\Api\Controllers\UserController@getUserProfileData');
 

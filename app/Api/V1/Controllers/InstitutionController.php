@@ -158,8 +158,8 @@ class InstitutionController extends Controller
     {
         //validation
         $this->validate($request, [
-            'name' => 'required|string|min:3|regex:/^([a-z0-9 ])+$/i|unique:institutions,name,' . $id,
-            'email' => 'required|email',
+            'name' => 'required|string|min:3|regex:/^([a-z0-9, ])+$/i|unique:institutions,name,' . $id,
+            'email' => 'required|string',
             'phone' => 'required|digits_between:8,16',
             'state_id' => 'required',
             'city_id' => 'required',

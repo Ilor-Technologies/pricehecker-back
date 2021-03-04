@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\AuthorizeIfOwner;
+use App\Http\Middleware\Cors;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\HideSensitiveInformation;
 use App\Http\Middleware\IsUserApprover;
@@ -94,5 +95,6 @@ class Kernel extends HttpKernel
         'hidesensitiveinformation' => HideSensitiveInformation::class,
         'is_user_approver' => IsUserApprover::class,
         'update_user_record' => UpdateUserMiddleware::class,
+        'cors' => Cors::class,
     ];
 }

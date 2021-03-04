@@ -55,7 +55,7 @@ class ParastatalController extends Controller
         //validation
         $this->validate($request, [
             'name' => 'required|string|unique:parastatals,name|min:3|regex:/^([a-z0-9 ])+$/i',
-            'email' => 'required|email',
+            'email' => 'required|string',
             'phone' => 'required|digits_between:8,16',
             'state_id' => 'required',
             'city_id' => 'required',
@@ -128,7 +128,7 @@ class ParastatalController extends Controller
         //validation
         $this->validate($request, [
             'name' => 'required|string|min:3|regex:/^([a-z0-9 ])+$/i|unique:parastatals,name,' . $id,
-            'email' => 'required|email',
+            'email' => 'required|string',
             'phone' => 'required|digits_between:8,16',
             'state_id' => 'required',
             'city_id' => 'required',
