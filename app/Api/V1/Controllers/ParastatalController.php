@@ -61,7 +61,7 @@ class ParastatalController extends Controller
             'city_id' => 'required',
             'institution_id' => [
                 'required',
-                'numeric',
+                'string',
                 'exists:institutions,id',              
                 /* Rule::exists('institutions')->where(function ($query) {
                     $query->where('id', $request->institution_id);

@@ -354,34 +354,40 @@ $api->version('v1', function (Router $api) {
         });
 
         $api->group(['middleware' => ['permission:add_institutions|add_institution']], function (Router $api) {
-            $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
-                'only' => ['store']
-            ]);
+            $api->post('institution', 'App\Api\Controllers\InstitutionController@store');
+//            $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
+//                'only' => ['store']
+//            ]);
         });
         $api->group(['middleware' => ['permission:edit_institutions|edit_institution']], function (Router $api) {
-            $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
-                'only' => ['update']
-            ]);
+            $api->put('institution/{id}', 'App\Api\Controllers\InstitutionController@update');
+//            $api->resource('institution', , [
+//                'only' => ['update']
+//            ]);
         });
         $api->group(['middleware' => ['permission:delete_institutions|delete_institution']], function (Router $api) {
-            $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
-                'only' => ['destroy']
-            ]);
+            $api->delete('institution/{id}', 'App\Api\Controllers\InstitutionController@destory');
+//            $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
+//                'only' => ['destroy']
+//            ]);
         });
         $api->group(['middleware' => ['permission:add_parastatals|add_parastatal']], function (Router $api) {
-            $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
-                'only' => ['store']
-            ]);
+            $api->post('parastatal', 'App\Api\Controllers\ParastatalController@store');
+//            $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
+//                'only' => ['store']
+//            ]);
         });
         $api->group(['middleware' => ['permission:edit_parastatals|edit_parastatal']], function (Router $api) {
-            $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
-                'only' => ['update']
-            ]);
+            $api->put('parastatal', 'App\Api\Controllers\ParastatalController@update');
+//            $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
+//                'only' => ['update']
+//            ]);
         });
         $api->group(['middleware' => ['permission:delete_parastatals|delete_parastatal']], function (Router $api) {
-            $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
-                'only' => ['destroy']
-            ]);
+            $api->delete('parastatal/{id}', 'App\Api\Controllers\ParastatalController@destroy');
+//            $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
+//                'only' => ['destroy']
+//            ]);
         });
 
         $api->group(['middleware' => ['role:admin|super_admin']], function (Router $api) {
@@ -410,12 +416,16 @@ $api->version('v1', function (Router $api) {
         });
 
         //sam
-        $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
-            'only' => ['index', 'show']
-        ]);
-        $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
-            'only' => ['index', 'show']
-        ]);
+        $api->get('institution', 'App\Api\Controllers\InstitutionController@index');
+        $api->get('institution/{id}', 'App\Api\Controllers\InstitutionController@show');
+        $api->get('parastatal', 'App\Api\Controllers\ParastatalController@index');
+        $api->get('parastatal/{id}', 'App\Api\Controllers\ParastatalController@show');
+//        $api->resource('institution', 'App\Api\Controllers\InstitutionController', [
+//            'only' => ['index', 'show']
+//        ]);
+//        $api->resource('parastatal', 'App\Api\Controllers\ParastatalController', [
+//            'only' => ['index', 'show']
+//        ]);
 
         //sam
         $api->resource('goods-review', 'App\Api\Controllers\GoodReviewController', [
