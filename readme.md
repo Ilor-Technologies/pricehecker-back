@@ -1,4 +1,4 @@
-## Laravel API Boilerplate (JWT Edition) for Laravel 5.6
+## Price Checker Backend
 
 [![Build Status](https://travis-ci.org/francescomalatesta/laravel-api-boilerplate-jwt.svg?branch=master)](https://travis-ci.org/francescomalatesta/laravel-api-boilerplate-jwt)
 
